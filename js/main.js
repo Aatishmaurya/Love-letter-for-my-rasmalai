@@ -323,3 +323,44 @@ function pauseSong(){
 audio.pause();
 
 }
+/*=========================
+FINAL SURPRISE
+=========================*/
+
+const finalBtn=document.getElementById("surpriseBtn");
+
+const finalScreen=document.getElementById("finalScreen");
+
+const finalMessage=document.getElementById("finalMessage");
+
+const finalSub=document.getElementById("finalSubMessage");
+
+finalBtn.onclick=function(){
+
+finalScreen.style.display="flex";
+
+let i=0;
+
+const msg="I Love You Rasmalai ❤️";
+
+function typeMessage(){
+
+if(i<msg.length){
+
+finalMessage.innerHTML+=msg.charAt(i);
+
+i++;
+
+setTimeout(typeMessage,120);
+
+}else{
+
+finalSub.innerHTML="Thank you for coming into my life.<br><br>I hope every page you saw reminded you how special you are to me.<br><br>❤️ Forever Yours ❤️";
+
+}
+
+}
+
+typeMessage();
+
+}
