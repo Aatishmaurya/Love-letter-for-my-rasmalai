@@ -253,3 +253,56 @@ viewer.style.display="none";
 type();
 
 });
+/*=========================
+OPEN WHEN LETTERS
+=========================*/
+
+const letters = {
+
+sad:{
+title:"When You're Sad ❤️",
+text:"This is placeholder text. Replace it later with a comforting message that only you would write."
+},
+
+miss:{
+title:"When You Miss Me ❤️",
+text:"Tell her that distance never changes how much she means to you."
+},
+
+happy:{
+title:"When You're Happy ❤️",
+text:"Celebrate her happiness and remind her to smile even more."
+},
+
+angry:{
+title:"When You're Angry ❤️",
+text:"Write a gentle apology or a calming message that helps her feel understood."
+}
+
+};
+
+function showLetter(type){
+
+document.getElementById("letterPopup").style.display="flex";
+
+document.getElementById("popupTitle").innerHTML=letters[type].title;
+
+document.getElementById("popupText").innerHTML=letters[type].text;
+
+}
+
+document.querySelector(".closePopup").onclick=function(){
+
+document.getElementById("letterPopup").style.display="none";
+
+}
+
+window.onclick=function(e){
+
+if(e.target==document.getElementById("letterPopup")){
+
+document.getElementById("letterPopup").style.display="none";
+
+}
+
+}
