@@ -225,7 +225,29 @@ i++;
 setTimeout(type,35);
 
 }
+/*======================
+PHOTO VIEWER
+======================*/
 
+const viewer=document.getElementById("photoViewer");
+const viewerImg=document.getElementById("viewerImg");
+const viewerCaption=document.getElementById("viewerCaption");
+
+function openPhoto(card){
+
+viewer.style.display="flex";
+
+viewerImg.src=card.querySelector("img").src;
+
+viewerCaption.innerHTML=card.querySelector("h3").innerHTML;
+
+}
+
+document.getElementById("closePhoto").onclick=function(){
+
+viewer.style.display="none";
+
+}
 }
 
 type();
