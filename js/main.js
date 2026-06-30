@@ -306,3 +306,20 @@ document.getElementById("letterPopup").style.display="none";
 }
 
 }
+/*=========================
+PLAYLIST
+=========================*/
+
+const audio=document.getElementById("audioPlayer");
+
+function playSong(){
+
+audio.play();
+
+}
+
+function pauseSong(){
+
+audio.pause();
+
+}
