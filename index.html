@@ -3,24 +3,25 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Our Universe ❤️</title>
+<title>Our Universe ❤️</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<div id="loading-screen">
+<div id="loading">
 
-    <div class="loader-heart">
-        ❤️
-    </div>
+    <div class="heart-loader"></div>
 
     <h2>Loading Our Universe...</h2>
 
@@ -29,43 +30,41 @@
 
 <div id="stars"></div>
 
-
-<div class="container">
-
-    <h2 class="small-title">
-        Welcome To
-    </h2>
-
-    <h1 class="main-title">
-        Our Universe
-    </h1>
-
-    <p class="subtitle">
-
-        Every love story is beautiful...
-
-        <br><br>
-
-        But ours is my favorite.
-
-    </p>
-
-    <button id="enterBtn">
-
-        Enter ❤️
-
-    </button>
-
-</div>
+<div id="hearts"></div>
 
 
-<audio id="bgMusic" loop>
+<section class="hero">
 
-    <source src="music/background.mp3" type="audio/mp3">
+<h3>WELCOME TO</h3>
+
+<h1>Our Universe</h1>
+
+<p>
+
+Every love story is beautiful...
+
+<br><br>
+
+But ours is my favorite.
+
+</p>
+
+<button id="enter">
+
+Enter ❤️
+
+</button>
+
+</section>
+
+
+<audio id="music" loop>
+
+<source src="music/background.mp3" type="audio/mp3">
 
 </audio>
 
-<script src="main.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 
