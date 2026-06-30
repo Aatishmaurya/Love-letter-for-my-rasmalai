@@ -642,3 +642,76 @@ grid-template-columns:1fr;
 }
 
 }
+/* ==========================
+LETTER
+========================== */
+
+.letter-section{
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+padding:80px 20px;
+
+text-align:center;
+
+}
+
+.letter-section h2{
+
+font-size:50px;
+
+margin-bottom:40px;
+
+}
+
+.envelope{
+
+font-size:120px;
+
+cursor:pointer;
+
+transition:.4s;
+
+}
+
+.envelope:hover{
+
+transform:scale(1.15) rotate(-10deg);
+
+}
+
+.letter-box{
+
+margin-top:40px;
+
+max-width:800px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+padding:40px;
+
+border-radius:25px;
+
+display:none;
+
+line-height:2;
+
+font-size:20px;
+
+}
+
+#typingText{
+
+white-space:pre-wrap;
+
+}
