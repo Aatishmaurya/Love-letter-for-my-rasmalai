@@ -174,3 +174,60 @@ document.getElementById("seconds").innerHTML = seconds;
 updateCounter();
 
 setInterval(updateCounter,1000);
+/* ==========================
+LOVE LETTER
+========================== */
+
+const message = `
+
+This is just a placeholder letter.
+
+Later you'll replace every word with your own.
+
+Tell her how you met.
+
+Tell her why she is special.
+
+Tell her how she changed your life.
+
+Tell her about your dreams together.
+
+Tell her everything your heart wants to say.
+
+❤️
+
+Forever Yours.
+
+`;
+
+const envelope=document.getElementById("openLetter");
+
+const letter=document.getElementById("letterBox");
+
+const typing=document.getElementById("typingText");
+
+envelope.addEventListener("click",()=>{
+
+letter.style.display="block";
+
+typing.innerHTML="";
+
+let i=0;
+
+function type(){
+
+if(i<message.length){
+
+typing.innerHTML+=message.charAt(i);
+
+i++;
+
+setTimeout(type,35);
+
+}
+
+}
+
+type();
+
+});
