@@ -117,59 +117,47 @@
 
 <section id="gallery" class="gallery">
 
-    <h2>Our Beautiful Memories ❤️</h2>
+<h2>Our Beautiful Memories ❤️</h2>
 
-    <p>
-        Every picture tells a story...
-    </p>
+<p>Every picture has a story.</p>
 
-    <div class="gallery-grid">
+<div class="gallery-grid">
 
-        <div class="photo-card">
-            <img src="images/photo1.jpg" alt="">
-            <div class="overlay">
-                <h3>Our First Memory</h3>
-            </div>
-        </div>
+<div class="photo-card" onclick="openPhoto(this)">
+<img src="images/photo1.jpg">
+<div class="overlay"><h3>Our First Memory ❤️</h3></div>
+</div>
 
-        <div class="photo-card">
-            <img src="images/photo2.jpg" alt="">
-            <div class="overlay">
-                <h3>Smile ❤️</h3>
-            </div>
-        </div>
+<div class="photo-card" onclick="openPhoto(this)">
+<img src="images/photo2.jpg">
+<div class="overlay"><h3>Movie Date 🍿</h3></div>
+</div>
 
-        <div class="photo-card">
-            <img src="images/photo3.jpg" alt="">
-            <div class="overlay">
-                <h3>Forever</h3>
-            </div>
-        </div>
+<div class="photo-card" onclick="openPhoto(this)">
+<img src="images/photo3.jpg">
+<div class="overlay"><h3>Your Beautiful Smile 😊</h3></div>
+</div>
 
-        <div class="photo-card">
-            <img src="images/photo4.jpg" alt="">
-            <div class="overlay">
-                <h3>Special Day</h3>
-            </div>
-        </div>
+<div class="photo-card" onclick="openPhoto(this)">
+<img src="images/photo4.jpg">
+<div class="overlay"><h3>Forever Together ❤️</h3></div>
+</div>
 
-        <div class="photo-card">
-            <img src="images/photo5.jpg" alt="">
-            <div class="overlay">
-                <h3>Us ❤️</h3>
-            </div>
-        </div>
-
-        <div class="photo-card">
-            <img src="images/photo6.jpg" alt="">
-            <div class="overlay">
-                <h3>Always Together</h3>
-            </div>
-        </div>
-
-    </div>
+</div>
 
 </section>
+
+<!-- FULL SCREEN IMAGE -->
+
+<div id="photoViewer">
+
+<span id="closePhoto">&times;</span>
+
+<img id="viewerImg">
+
+<p id="viewerCaption"></p>
+
+</div>
 <!-- LOVE COUNTER -->
 
 <section id="counter" class="counter">
