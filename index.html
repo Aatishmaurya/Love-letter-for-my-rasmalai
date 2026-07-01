@@ -4,490 +4,269 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>Our Universe ❤️</title>
+<title>For My Rasmalai ❤️</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="description"
+content="A little universe made with love.">
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="css/style.css">
 
 </head>
 
 <body>
-<nav class="navbar">
 
-<div class="logo">
-❤️ Our Universe
-</div>
+<!-- ===========================
+LOADING SCREEN
+=========================== -->
 
-<ul>
+<div id="loading-screen">
 
-<li><a href="#story">Story</a></li>
+<div class="loader-heart">
 
-<li><a href="#gallery">Gallery</a></li>
-
-<li><a href="#letter">Letter</a></li>
-
-<li><a href="#timeline">Timeline</a></li>
-
-<li><a href="#future">Future</a></li>
-
-</ul>
-
-</nav>
-<div id="loading">
-
-    <div class="heart-loader"></div>
-
-    <h2>Loading Our Universe...</h2>
+❤
 
 </div>
 
+<h2>
+
+Preparing
+Our Universe...
+
+</h2>
+
+<p>
+
+Made with Love
+
+</p>
+
+</div>
+
+<!-- ===========================
+BACKGROUND
+=========================== -->
 
 <div id="stars"></div>
 
-<div id="hearts"></div>
+<div id="floating-hearts"></div>
 
+<!-- ===========================
+MUSIC
+=========================== -->
 
-<section class="hero">
+<audio
+id="backgroundMusic"
+loop>
 
-    <h3>WELCOME TO</h3>
-
-    <h1>Our Universe</h1>
-
-    <p>
-        Every love story is beautiful...
-        <br><br>
-        But ours is my favorite.
-    </p>
-
-    <button id="enter">
-        Enter ❤️
-    </button>
-
-</section>
-
-
-<!-- OUR STORY -->
-
-<section id="story" class="story">
-
-    <h2>Our Story</h2>
-
-    <p class="story-text">
-
-        Dear Rasmalai,
-
-        <br><br>
-
-        This is just placeholder text.
-
-        Later you'll replace this with your own memories,
-        your own feelings,
-        and your own story.
-
-        <br><br>
-
-        Every memory deserves its own place.
-
-        And this little universe is only for you.
-
-    </p>
-
-</section>
-
-
-<audio id="music" loop>
-
-<source src="music/background.mp3" type="audio/mp3">
+<source
+src="music/background.mp3"
+type="audio/mp3">
 
 </audio>
 
-<script src="js/main.js"></script>
+<!-- ===========================
+MUSIC BUTTON
+=========================== -->
+
+<button
+id="musicToggle"
+title="Music">
+
+🎵
+
+</button>
+
+<!-- ===========================
+SCROLL BUTTON
+=========================== -->
+
+<button
+id="scrollTop">
+
+↑
+
+</button>
+
+<!-- ===========================
+HERO
+=========================== -->
+
+<section
+class="hero"
+id="hero">
+
+<div class="hero-content">
+
+<p class="welcome">
+
+Hello,
+
+</p>
+
+<h1>
+
+Rasmalai ❤️
+
+</h1>
+
+<h3>
+
+I made something...
+
+</h3>
+
+<p class="hero-text">
+
+This isn't just a website.
+
+<br><br>
+
+It's every little feeling
+that I couldn't always
+express in words.
+
+<br><br>
+
+Every click,
+every animation,
+every picture,
+every letter...
+
+was made
+thinking about you.
+
+</p>
+
+<button
+id="enterButton">
+
+Enter Our Universe ❤️
+
+</button>
+
+</div>
+
+<div class="scroll-indicator">
+
+↓
+
+</div>
+
+</section>
+
+<!-- ===========================
+OUR STORY
+=========================== -->
+
+<section
+id="story"
+class="story">
+
+<div class="section-title">
+
+<h2>
+
+Our Story
+
+</h2>
+
+<p>
+
+Every beautiful journey
+starts with one memory.
+
+</p>
+
+</div>
+
+<div class="story-card">
+
+<h3>
+
+Do You Remember?
+
+</h3>
+
+<p>
+
+Do you remember...
+
+when we met near
+Guddu Bhai's shop?
+
+</p>
+
+<p>
+
+That very first hug...
+
+became one of my
+favorite memories.
+
+</p>
+
+<p>
+
+Maybe for the world
+
+it was just a hug.
+
+</p>
+
+<p>
+
+But for me...
+
+it became a memory
+
+I'll never forget.
+
+</p>
+
+<p>
+
+Whenever I think
+about that day,
+
+I can't stop smiling.
+
+</p>
+
+<button
+class="continueButton">
+
+Continue ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ===========================
+PHOTO GALLERY
+PART 2 STARTS HERE
+=========================== -->
+
+<script
+src="js/main.js">
+
+</script>
 
 </body>
 
 </html>
-
-<!-- GALLERY -->
-
-<section id="gallery" class="gallery">
-
-<h2>Our Beautiful Memories ❤️</h2>
-
-<p>Every picture has a story.</p>
-
-<div class="gallery-grid">
-
-<div class="photo-card" onclick="openPhoto(this)">
-<img src="images/photo1.jpg">
-<div class="overlay"><h3>Our First Memory ❤️</h3></div>
-</div>
-
-<div class="photo-card" onclick="openPhoto(this)">
-<img src="images/photo2.jpg">
-<div class="overlay"><h3>Movie Date 🍿</h3></div>
-</div>
-
-<div class="photo-card" onclick="openPhoto(this)">
-<img src="images/photo3.jpg">
-<div class="overlay"><h3>Your Beautiful Smile 😊</h3></div>
-</div>
-
-<div class="photo-card" onclick="openPhoto(this)">
-<img src="images/photo4.jpg">
-<div class="overlay"><h3>Forever Together ❤️</h3></div>
-</div>
-
-</div>
-
-</section>
-
-<!-- FULL SCREEN IMAGE -->
-
-<div id="photoViewer">
-
-<span id="closePhoto">&times;</span>
-
-<img id="viewerImg">
-
-<p id="viewerCaption"></p>
-
-</div>
-<!-- LOVE COUNTER -->
-
-<section id="counter" class="counter">
-
-<h2>Our Journey</h2>
-
-<p class="counter-title">
-
-Every second with you has been special ❤️
-
-</p>
-
-<div class="counter-box">
-
-<div class="time-box">
-
-<h3 id="days">0</h3>
-
-<span>Days</span>
-
-</div>
-
-<div class="time-box">
-
-<h3 id="hours">0</h3>
-
-<span>Hours</span>
-
-</div>
-
-<div class="time-box">
-
-<h3 id="minutes">0</h3>
-
-<span>Minutes</span>
-
-</div>
-
-<div class="time-box">
-
-<h3 id="seconds">0</h3>
-
-<span>Seconds</span>
-
-</div>
-
-</div>
-
-</section>
-<!-- LOVE LETTER -->
-
-<section id="letter" class="letter-section">
-
-    <h2>A Letter For You ❤️</h2>
-
-    <div class="envelope" id="openLetter">
-
-        💌
-
-    </div>
-
-    <div class="letter-box" id="letterBox">
-
-        <h3>Dear Rasmalai,</h3>
-
-        <p id="typingText"></p>
-
-    </div>
-
-</section>
-<!-- TIMELINE -->
-
-<section id="timeline" class="timeline">
-
-<h2>Our Journey ❤️</h2>
-
-<div class="timeline-container">
-
-<div class="timeline-item left">
-
-<div class="timeline-content">
-
-<h3>First Message 💬</h3>
-
-<p>
-Write about your first conversation.
-</p>
-
-</div>
-
-</div>
-
-<div class="timeline-item right">
-
-<div class="timeline-content">
-
-<h3>First Call 📞</h3>
-
-<p>
-Write about your first phone call.
-</p>
-
-</div>
-
-</div>
-
-<div class="timeline-item left">
-
-<div class="timeline-content">
-
-<h3>First Meet ❤️</h3>
-
-<p>
-Describe your first meeting.
-</p>
-
-</div>
-
-</div>
-
-<div class="timeline-item right">
-
-<div class="timeline-content">
-
-<h3>Today 🌹</h3>
-
-<p>
-Every day with you is beautiful.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- =========================
-100 REASONS
-========================= -->
-
-<section id="reasons" class="reasons">
-
-<h2>100 Reasons Why I Love You ❤️</h2>
-
-<p class="reason-subtitle">
-Click any card ❤️
-</p>
-
-<div class="reason-grid">
-
-<div class="reason-card">
-
-<div class="front">
-Reason #1 ❤️
-</div>
-
-<div class="back">
-Because your smile makes every day brighter.
-</div>
-
-</div>
-
-<div class="reason-card">
-
-<div class="front">
-Reason #2 ❤️
-</div>
-
-<div class="back">
-Because you always make me feel special.
-</div>
-
-</div>
-
-<div class="reason-card">
-
-<div class="front">
-Reason #3 ❤️
-</div>
-
-<div class="back">
-Because you're my favorite person.
-</div>
-
-</div>
-
-<div class="reason-card">
-
-<div class="front">
-Reason #4 ❤️
-</div>
-
-<div class="back">
-Because every moment with you is beautiful.
-</div>
-
-</div>
-
-<div class="reason-card">
-
-<div class="front">
-Reason #5 ❤️
-</div>
-
-<div class="back">
-Because you're simply you.
-</div>
-
-</div>
-
-<div class="reason-card">
-
-<div class="front">
-Reason #6 ❤️
-</div>
-
-<div class="back">
-Because life feels better with you.
-</div>
-
-</div>
-
-</div>
-
-</section>
-<!-- OPEN WHEN LETTERS -->
-
-<section id="openwhen" class="open-when">
-
-<h2>Open When... ❤️</h2>
-
-<div class="letter-buttons">
-
-<button onclick="showLetter('sad')">
-💌 Open when you're sad
-</button>
-
-<button onclick="showLetter('miss')">
-💌 Open when you miss me
-</button>
-
-<button onclick="showLetter('happy')">
-💌 Open when you're happy
-</button>
-
-<button onclick="showLetter('angry')">
-💌 Open when you're angry
-</button>
-
-</div>
-
-<div id="letterPopup" class="popup">
-
-<div class="popup-content">
-
-<span class="closePopup">&times;</span>
-
-<h3 id="popupTitle"></h3>
-
-<p id="popupText"></p>
-
-</div>
-
-</div>
-
-</section>
-<!-- ==========================
-OUR PLAYLIST
-========================== -->
-
-<section id="playlist" class="playlist">
-
-<h2>🎵 Our Playlist</h2>
-
-<p>Every song reminds me of you ❤️</p>
-
-<div class="player">
-
-<h3 id="songTitle">
-Perfect - Ed Sheeran
-</h3>
-
-<audio id="audioPlayer">
-
-<source src="music/song1.mp3" type="audio/mp3">
-
-</audio>
-
-<div class="controls">
-
-<button onclick="playSong()">▶</button>
-
-<button onclick="pauseSong()">⏸</button>
-
-</div>
-
-</div>
-
-</section>
-<!-- ==========================
-FINAL SURPRISE
-========================== -->
-
-<section id="final" class="final-section">
-
-    <div id="surpriseCard">
-
-        <h2>One Last Surprise ❤️</h2>
-
-        <p>
-            Before you leave...
-            <br><br>
-            I have one more thing to tell you.
-        </p>
-
-        <button id="surpriseBtn">
-            Click Me ❤️
-        </button>
-
-    </div>
-
-</section>
-
-<!-- Fullscreen Final -->
-
-<div id="finalScreen">
-
-    <h1 id="finalMessage"></h1>
-
-    <p id="finalSubMessage"></p>
-
-</div>
