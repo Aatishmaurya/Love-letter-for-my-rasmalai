@@ -802,3 +802,157 @@ if(restartJourney){
     });
 
 }
+/*=========================================================
+        LIVE COUNTER
+=========================================================*/
+
+// Change this to your actual special date
+const loveStartDate = new Date("2025-01-01T00:00:00");
+
+const days = document.getElementById("days");
+const hours = document.getElementById("hours");
+const minutes = document.getElementById("minutes");
+const seconds = document.getElementById("seconds");
+
+function updateLoveCounter(){
+
+    if(!days) return;
+
+    const now = new Date();
+
+    const diff = now - loveStartDate;
+
+    const totalSeconds = Math.floor(diff / 1000);
+
+    const d = Math.floor(totalSeconds / 86400);
+
+    const h = Math.floor((totalSeconds % 86400) / 3600);
+
+    const m = Math.floor((totalSeconds % 3600) / 60);
+
+    const s = totalSeconds % 60;
+
+    days.innerHTML = d;
+    hours.innerHTML = h;
+    minutes.innerHTML = m;
+    seconds.innerHTML = s;
+
+}
+
+updateLoveCounter();
+
+setInterval(updateLoveCounter,1000);
+
+
+
+/*=========================================================
+        SCROLL PROGRESS BAR
+=========================================================*/
+
+const progressBar = document.getElementById("progressBar");
+
+window.addEventListener("scroll",()=>{
+
+    if(!progressBar) return;
+
+    const totalHeight =
+        document.documentElement.scrollHeight -
+        window.innerHeight;
+
+    const progress =
+        (window.scrollY / totalHeight) * 100;
+
+    progressBar.style.width = progress + "%";
+
+});
+
+
+
+/*=========================================================
+        BUTTON CLICK SOUND
+=========================================================*/
+
+const clickSound =
+document.getElementById("buttonClick");
+
+document.querySelectorAll("button").forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+        if(clickSound){
+
+            clickSound.currentTime = 0;
+
+            clickSound.play().catch(()=>{});
+
+        }
+
+    });
+
+});
+
+
+
+/*=========================================================
+        PAGE FLIP SOUND
+=========================================================*/
+
+const flipSound =
+document.getElementById("pageFlip");
+
+document.querySelectorAll(".nextPage,.prevPage")
+
+.forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+        if(flipSound){
+
+            flipSound.currentTime = 0;
+
+            flipSound.play().catch(()=>{});
+
+        }
+
+    });
+
+});
+
+
+
+/*=========================================================
+        AUTO FLOATING HEARTS
+=========================================================*/
+
+function spawnHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "floatingHeart";
+
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random()*100 + "vw";
+
+    heart.style.fontSize =
+        (18 + Math.random()*20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },8000);
+
+}
+
+setInterval(spawnHeart,3000);
+
+
+
+/*=========================================================
+        PAGE FINISHED
+=========================================================*/
+
+console.log("❤️ Love Letter Website Loaded Successfully ❤️");
