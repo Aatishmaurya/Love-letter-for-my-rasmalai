@@ -154,3 +154,153 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+/*=========================================================
+        DIARY ENGINE
+=========================================================*/
+
+const openBook = document.getElementById("openBook");
+const bookOverlay = document.getElementById("bookOverlay");
+const closeBook = document.getElementById("closeBook");
+
+const pages = document.querySelectorAll(".book-page");
+const nextButtons = document.querySelectorAll(".nextPage");
+const prevButtons = document.querySelectorAll(".prevPage");
+
+let currentPage = 0;
+
+
+/*=========================================
+OPEN BOOK
+=========================================*/
+
+function showPage(index){
+
+    pages.forEach((page)=>{
+
+        page.classList.remove("active");
+
+    });
+
+    if(pages[index]){
+
+        pages[index].classList.add("active");
+
+    }
+
+}
+
+
+if(openBook){
+
+    openBook.addEventListener("click",()=>{
+
+        currentPage=0;
+
+        showPage(currentPage);
+
+        bookOverlay.style.display="flex";
+
+        document.body.style.overflow="hidden";
+
+    });
+
+}
+
+
+/*=========================================
+NEXT PAGE
+=========================================*/
+
+nextButtons.forEach((button)=>{
+
+    button.addEventListener("click",()=>{
+
+        if(currentPage<pages.length-1){
+
+            currentPage++;
+
+            showPage(currentPage);
+
+        }
+
+    });
+
+});
+
+
+/*=========================================
+PREVIOUS PAGE
+=========================================*/
+
+prevButtons.forEach((button)=>{
+
+    button.addEventListener("click",()=>{
+
+        if(currentPage>0){
+
+            currentPage--;
+
+            showPage(currentPage);
+
+        }
+
+    });
+
+});
+
+
+/*=========================================
+CLOSE BOOK
+=========================================*/
+
+function hideBook(){
+
+    if(bookOverlay){
+
+        bookOverlay.style.display="none";
+
+    }
+
+    document.body.style.overflow="auto";
+
+}
+
+if(closeBook){
+
+    closeBook.addEventListener("click",hideBook);
+
+}
+
+
+/*=========================================
+CLICK OUTSIDE
+=========================================*/
+
+if(bookOverlay){
+
+    bookOverlay.addEventListener("click",(e)=>{
+
+        if(e.target===bookOverlay){
+
+            hideBook();
+
+        }
+
+    });
+
+}
+
+
+/*=========================================
+ESC KEY
+=========================================*/
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="Escape"){
+
+        hideBook();
+
+    }
+
+});
