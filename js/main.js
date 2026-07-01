@@ -1,366 +1,235 @@
-// ===============================
-// OUR UNIVERSE ❤️
-// Version 2
-// ===============================
+/* ==========================================================
+   FOR MY RASMALAI ❤️
+   MAIN.JS
+   PART 1
 
-const loading = document.getElementById("loading");
-const music = document.getElementById("music");
-const enter = document.getElementById("enter");
+   ✔ Loading Screen
+   ✔ Enter Button
+   ✔ Music
+   ✔ Scroll To Top
+   ✔ Reveal Animation
+   ✔ Floating Hearts
+========================================================== */
 
-// ----------------------
-// Loading Screen
-// ----------------------
+
+/*==============================
+DOM ELEMENTS
+==============================*/
+
+const loader = document.getElementById("loading-screen");
+
+const enterButton = document.getElementById("enterButton");
+
+const backgroundMusic = document.getElementById("backgroundMusic");
+
+const musicToggle = document.getElementById("musicToggle");
+
+const scrollTopBtn = document.getElementById("scrollTop");
+
+const floatingHearts = document.getElementById("floating-hearts");
+
+
+/*==============================
+LOADING SCREEN
+==============================*/
 
 window.addEventListener("load", () => {
 
-    setTimeout(() => {
+setTimeout(() => {
 
-        loading.style.opacity = "0";
+loader.style.opacity = "0";
 
-        setTimeout(() => {
+loader.style.visibility = "hidden";
 
-            loading.style.display = "none";
+loader.style.pointerEvents = "none";
 
-        },1000);
-
-    },2500);
+},1800);
 
 });
 
-// ----------------------
-// Floating Hearts
-// ----------------------
+
+/*==============================
+ENTER BUTTON
+==============================*/
+
+enterButton.addEventListener("click",()=>{
+
+document.getElementById("story").scrollIntoView({
+
+behavior:"smooth"
+
+});
+
+});
+
+
+/*==============================
+MUSIC
+==============================*/
+
+let musicPlaying=false;
+
+musicToggle.addEventListener("click",()=>{
+
+if(!musicPlaying){
+
+backgroundMusic.play();
+
+musicPlaying=true;
+
+musicToggle.innerHTML="🔊";
+
+}
+
+else{
+
+backgroundMusic.pause();
+
+musicPlaying=false;
+
+musicToggle.innerHTML="🎵";
+
+}
+
+});
+
+
+/*==============================
+SCROLL TO TOP
+==============================*/
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>500){
+
+scrollTopBtn.style.display="block";
+
+}
+
+else{
+
+scrollTopBtn.style.display="none";
+
+}
+
+});
+
+scrollTopBtn.addEventListener("click",()=>{
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+});
+
+
+/*==============================
+REVEAL ANIMATION
+==============================*/
+
+const revealElements=document.querySelectorAll("section");
+
+function revealSections(){
+
+const trigger=window.innerHeight*0.85;
+
+revealElements.forEach(section=>{
+
+const top=section.getBoundingClientRect().top;
+
+if(top<trigger){
+
+section.classList.add("active");
+
+}
+
+});
+
+}
+
+window.addEventListener("scroll",revealSections);
+
+revealSections();
+
+
+/*==============================
+FLOATING HEARTS
+==============================*/
 
 function createHeart(){
 
-    const heart=document.createElement("div");
+const heart=document.createElement("div");
 
-    heart.innerHTML="❤️";
+heart.innerHTML="❤";
 
-    heart.style.position="fixed";
+heart.style.position="absolute";
 
-    heart.style.left=Math.random()*100+"vw";
+heart.style.left=Math.random()*100+"%";
 
-    heart.style.top="100vh";
+heart.style.bottom="-30px";
 
-    heart.style.fontSize=(18+Math.random()*22)+"px";
+heart.style.fontSize=(12+Math.random()*18)+"px";
 
-    heart.style.opacity=Math.random();
+heart.style.color="rgba(255,92,138,.7)";
 
-    heart.style.pointerEvents="none";
+heart.style.animation="heartFloat 8s linear forwards";
 
-    heart.style.transition="8s linear";
+floatingHearts.appendChild(heart);
 
-    heart.style.zIndex="999";
+setTimeout(()=>{
 
-    document.body.appendChild(heart);
+heart.remove();
 
-    setTimeout(()=>{
-
-        heart.style.transform="translateY(-120vh) rotate(360deg)";
-
-        heart.style.opacity="0";
-
-    },30);
-
-    setTimeout(()=>{
-
-        heart.remove();
-
-    },8000);
+},8000);
 
 }
 
-setInterval(createHeart,800);
+setInterval(createHeart,900);
 
-// ----------------------
-// Mouse Sparkles
-// ----------------------
 
-document.addEventListener("mousemove",(e)=>{
+/*==============================
+HEART ANIMATION
+==============================*/
 
-    const dot=document.createElement("div");
+const style=document.createElement("style");
 
-    dot.style.position="fixed";
+style.innerHTML=`
 
-    dot.style.left=e.clientX+"px";
+@keyframes heartFloat{
 
-    dot.style.top=e.clientY+"px";
+0%{
 
-    dot.style.width="5px";
+transform:translateY(0) scale(1);
 
-    dot.style.height="5px";
-
-    dot.style.borderRadius="50%";
-
-    dot.style.background="white";
-
-    dot.style.pointerEvents="none";
-
-    dot.style.opacity=".8";
-
-    dot.style.transition=".6s";
-
-    document.body.appendChild(dot);
-
-    setTimeout(()=>{
-
-        dot.style.transform="scale(0)";
-
-        dot.style.opacity="0";
-
-    },20);
-
-    setTimeout(()=>{
-
-        dot.remove();
-
-    },600);
-
-});
-
-// ----------------------
-// Enter Button
-// ----------------------
-
-enter.addEventListener("click",()=>{
-
-    music.play().catch(()=>{});
-
-    enter.innerHTML="Welcome ❤️";
-
-    document.body.style.transition="1.2s";
-
-    document.body.style.opacity="0";
-
-    setTimeout(()=>{
-
-        // Later this will open the next section
-        location.href="#story";
-
-        document.body.style.opacity="1";
-
-    },1200);
-
-});
-/*=========================
-LOVE COUNTER
-=========================*/
-
-// Change this later to your actual anniversary
-const startDate = new Date("2025-01-01T00:00:00");
-
-function updateCounter(){
-
-const now = new Date();
-
-const diff = now - startDate;
-
-const days = Math.floor(diff/(1000*60*60*24));
-
-const hours = Math.floor(diff/(1000*60*60));
-
-const minutes = Math.floor(diff/(1000*60));
-
-const seconds = Math.floor(diff/1000);
-
-document.getElementById("days").innerHTML = days;
-document.getElementById("hours").innerHTML = hours;
-document.getElementById("minutes").innerHTML = minutes;
-document.getElementById("seconds").innerHTML = seconds;
+opacity:0;
 
 }
 
-updateCounter();
+20%{
 
-setInterval(updateCounter,1000);
-/* ==========================
-LOVE LETTER
-========================== */
+opacity:1;
 
-const message = `
+}
 
-This is just a placeholder letter.
+100%{
 
-Later you'll replace every word with your own.
+transform:translateY(-120vh) scale(1.8);
 
-Tell her how you met.
+opacity:0;
 
-Tell her why she is special.
+}
 
-Tell her how she changed your life.
-
-Tell her about your dreams together.
-
-Tell her everything your heart wants to say.
-
-❤️
-
-Forever Yours.
+}
 
 `;
 
-const envelope=document.getElementById("openLetter");
+document.head.appendChild(style);
 
-const letter=document.getElementById("letterBox");
 
-const typing=document.getElementById("typingText");
-
-envelope.addEventListener("click",()=>{
-
-letter.style.display="block";
-
-typing.innerHTML="";
-
-let i=0;
-
-function type(){
-
-if(i<message.length){
-
-typing.innerHTML+=message.charAt(i);
-
-i++;
-
-setTimeout(type,35);
-
-}
-/*======================
-PHOTO VIEWER
-======================*/
-
-const viewer=document.getElementById("photoViewer");
-const viewerImg=document.getElementById("viewerImg");
-const viewerCaption=document.getElementById("viewerCaption");
-
-function openPhoto(card){
-
-viewer.style.display="flex";
-
-viewerImg.src=card.querySelector("img").src;
-
-viewerCaption.innerHTML=card.querySelector("h3").innerHTML;
-
-}
-
-document.getElementById("closePhoto").onclick=function(){
-
-viewer.style.display="none";
-
-}
-}
-
-type();
-
-});
-/*=========================
-OPEN WHEN LETTERS
-=========================*/
-
-const letters = {
-
-sad:{
-title:"When You're Sad ❤️",
-text:"This is placeholder text. Replace it later with a comforting message that only you would write."
-},
-
-miss:{
-title:"When You Miss Me ❤️",
-text:"Tell her that distance never changes how much she means to you."
-},
-
-happy:{
-title:"When You're Happy ❤️",
-text:"Celebrate her happiness and remind her to smile even more."
-},
-
-angry:{
-title:"When You're Angry ❤️",
-text:"Write a gentle apology or a calming message that helps her feel understood."
-}
-
-};
-
-function showLetter(type){
-
-document.getElementById("letterPopup").style.display="flex";
-
-document.getElementById("popupTitle").innerHTML=letters[type].title;
-
-document.getElementById("popupText").innerHTML=letters[type].text;
-
-}
-
-document.querySelector(".closePopup").onclick=function(){
-
-document.getElementById("letterPopup").style.display="none";
-
-}
-
-window.onclick=function(e){
-
-if(e.target==document.getElementById("letterPopup")){
-
-document.getElementById("letterPopup").style.display="none";
-
-}
-
-}
-/*=========================
-PLAYLIST
-=========================*/
-
-const audio=document.getElementById("audioPlayer");
-
-function playSong(){
-
-audio.play();
-
-}
-
-function pauseSong(){
-
-audio.pause();
-
-}
-/*=========================
-FINAL SURPRISE
-=========================*/
-
-const finalBtn=document.getElementById("surpriseBtn");
-
-const finalScreen=document.getElementById("finalScreen");
-
-const finalMessage=document.getElementById("finalMessage");
-
-const finalSub=document.getElementById("finalSubMessage");
-
-finalBtn.onclick=function(){
-
-finalScreen.style.display="flex";
-
-let i=0;
-
-const msg="I Love You Rasmalai ❤️";
-
-function typeMessage(){
-
-if(i<msg.length){
-
-finalMessage.innerHTML+=msg.charAt(i);
-
-i++;
-
-setTimeout(typeMessage,120);
-
-}else{
-
-finalSub.innerHTML="Thank you for coming into my life.<br><br>I hope every page you saw reminded you how special you are to me.<br><br>❤️ Forever Yours ❤️";
-
-}
-
-}
-
-typeMessage();
-
-}
+/*==============================
+END PART 1
+==============================*/
