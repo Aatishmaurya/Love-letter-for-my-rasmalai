@@ -666,3 +666,139 @@ closeOpenPopup();
 }
 
 });
+/*=========================================================
+        FINAL SURPRISE ENGINE
+=========================================================*/
+
+const finalButton = document.getElementById("finalButton");
+const endingScreen = document.getElementById("endingScreen");
+const restartJourney = document.getElementById("restartJourney");
+const confettiContainer = document.getElementById("confettiContainer");
+
+
+/*=========================================
+CONFETTI
+=========================================*/
+
+function createConfetti(){
+
+    const colors=[
+
+        "#ff5c8a",
+
+        "#ffd27a",
+
+        "#ffffff",
+
+        "#7ec8ff",
+
+        "#ff8db3"
+
+    ];
+
+    for(let i=0;i<180;i++){
+
+        const piece=document.createElement("div");
+
+        piece.className="confetti";
+
+        piece.style.left=Math.random()*100+"vw";
+
+        piece.style.background=
+
+        colors[Math.floor(Math.random()*colors.length)];
+
+        piece.style.animationDelay=
+
+        Math.random()*2+"s";
+
+        piece.style.animationDuration=
+
+        (3+Math.random()*2)+"s";
+
+        confettiContainer.appendChild(piece);
+
+    }
+
+}
+
+
+/*=========================================
+FLOATING HEARTS
+=========================================*/
+
+function createHearts(){
+
+    for(let i=0;i<40;i++){
+
+        const heart=document.createElement("div");
+
+        heart.className="floatingHeart";
+
+        heart.innerHTML="❤️";
+
+        heart.style.left=Math.random()*100+"vw";
+
+        heart.style.fontSize=
+
+        (18+Math.random()*25)+"px";
+
+        heart.style.animationDelay=
+
+        Math.random()*3+"s";
+
+        document.body.appendChild(heart);
+
+    }
+
+}
+
+
+/*=========================================
+FINAL BUTTON
+=========================================*/
+
+if(finalButton){
+
+    finalButton.addEventListener("click",()=>{
+
+        createConfetti();
+
+        createHearts();
+
+        setTimeout(()=>{
+
+            endingScreen.style.display="flex";
+
+            document.body.style.overflow="hidden";
+
+        },1500);
+
+    });
+
+}
+
+
+/*=========================================
+RESTART
+=========================================*/
+
+if(restartJourney){
+
+    restartJourney.addEventListener("click",()=>{
+
+        endingScreen.style.display="none";
+
+        document.body.style.overflow="auto";
+
+        window.scrollTo({
+
+            top:0,
+
+            behavior:"smooth"
+
+        });
+
+    });
+
+}
