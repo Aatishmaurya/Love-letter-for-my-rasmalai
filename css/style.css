@@ -1714,3 +1714,380 @@ font-size:28px;
 }
 
 }
+/*=========================================================
+                    FUTURE DREAMS
+==========================================================*/
+
+.dreamGrid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:30px;
+
+margin-top:60px;
+
+}
+
+.dreamCard{
+
+background:var(--card);
+
+backdrop-filter:blur(18px);
+
+border:1px solid var(--border);
+
+border-radius:28px;
+
+padding:40px;
+
+text-align:center;
+
+transition:.4s;
+
+box-shadow:var(--shadow);
+
+}
+
+.dreamCard:hover{
+
+transform:translateY(-10px) scale(1.02);
+
+border-color:var(--gold);
+
+}
+
+.dreamCard{
+
+font-size:22px;
+
+line-height:1.9;
+
+color:var(--text);
+
+}
+
+.dreamCard h3{
+
+margin:18px 0;
+
+font-size:28px;
+
+color:var(--gold);
+
+}
+
+
+
+/*=========================================================
+                    FINAL SURPRISE
+==========================================================*/
+
+#surprise{
+
+text-align:center;
+
+}
+
+.surpriseContainer{
+
+margin-top:60px;
+
+}
+
+#finalButton{
+
+padding:22px 60px;
+
+border-radius:60px;
+
+font-size:22px;
+
+background:linear-gradient(45deg,var(--pink),var(--pink2));
+
+color:white;
+
+box-shadow:0 20px 60px rgba(255,92,138,.35);
+
+transition:.4s;
+
+}
+
+#finalButton:hover{
+
+transform:translateY(-8px) scale(1.05);
+
+}
+
+
+
+/*=========================================================
+                    ENDING SCREEN
+==========================================================*/
+
+#endingScreen{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+background:
+
+linear-gradient(180deg,#05060d,#0a1020);
+
+z-index:9999;
+
+padding:30px;
+
+}
+
+.endingContent{
+
+max-width:850px;
+
+text-align:center;
+
+animation:endingFade 1s ease;
+
+}
+
+.endingContent h1{
+
+font-size:100px;
+
+margin-bottom:20px;
+
+}
+
+.endingContent h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:70px;
+
+margin-bottom:30px;
+
+color:white;
+
+}
+
+.endingContent p{
+
+font-size:22px;
+
+line-height:2;
+
+color:#dddddd;
+
+margin-bottom:40px;
+
+}
+
+#restartJourney{
+
+padding:20px 55px;
+
+border-radius:60px;
+
+font-size:20px;
+
+background:linear-gradient(45deg,var(--pink),var(--pink2));
+
+color:white;
+
+box-shadow:0 20px 50px rgba(255,92,138,.30);
+
+}
+
+
+
+/*=========================================================
+                    FOOTER
+==========================================================*/
+
+footer{
+
+padding:100px 20px;
+
+text-align:center;
+
+background:#05060d;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+footer h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:60px;
+
+margin-bottom:18px;
+
+color:white;
+
+}
+
+footer p{
+
+font-size:18px;
+
+color:#bdbdbd;
+
+margin-bottom:15px;
+
+}
+
+footer h3{
+
+font-size:24px;
+
+font-weight:500;
+
+color:var(--gold);
+
+}
+
+
+
+/*=========================================================
+                    LAST MESSAGE
+==========================================================*/
+
+#lastMessage{
+
+display:none;
+
+text-align:center;
+
+padding:120px 20px;
+
+}
+
+#lastMessage h1{
+
+font-size:90px;
+
+margin-bottom:20px;
+
+}
+
+#lastMessage h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:62px;
+
+margin-bottom:25px;
+
+}
+
+#lastMessage p{
+
+max-width:750px;
+
+margin:auto;
+
+font-size:22px;
+
+line-height:2;
+
+color:#dddddd;
+
+}
+
+
+
+/*=========================================================
+                    ENDING ANIMATION
+==========================================================*/
+
+@keyframes endingFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+/*=========================================================
+                    MOBILE
+==========================================================*/
+
+@media(max-width:768px){
+
+.dreamCard{
+
+padding:28px;
+
+}
+
+.endingContent h1{
+
+font-size:70px;
+
+}
+
+.endingContent h2{
+
+font-size:46px;
+
+}
+
+.endingContent p{
+
+font-size:18px;
+
+line-height:1.8;
+
+}
+
+footer h2{
+
+font-size:46px;
+
+}
+
+#lastMessage h2{
+
+font-size:44px;
+
+}
+
+#lastMessage p{
+
+font-size:18px;
+
+line-height:1.8;
+
+}
+
+}
